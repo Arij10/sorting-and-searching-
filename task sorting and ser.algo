@@ -1,0 +1,34 @@
+/* ***Insertion Sort Procedure *** */
+Procedure insertion_sort(VAR arr : ARRAY_OF_INTEGER)
+VAR
+n,i,j, tmp : INTEGER
+BEGIN
+n := arr.length;
+FOR i FROM 1 TO n DO
+ tmp:=arr[i];
+     j:= i-1;
+  WHILE (j>=0 and arr[j]>tmp) DO 
+    arr[j+1] := arr[j];
+    j:=j-1;
+ END WHILE
+ arr[j+1] = tmp ;
+ END_FOR
+END
+/* *** Insertion Sort Algorithm *** */
+ALGORITHM InsertionSort 
+VAR
+n,i: INTEGER;
+V1: ARRAY_OF_INTEGER[n];
+BEGIN
+//Read the array
+    write("Give the length of the array "); Read(n);
+    write("Give the elements of the array")
+    FOR i FROM 0 TO n-1 DO 
+      Read(V1[i]);
+      END_FOR
+      write ("the oroginal unsorted array",V1);
+      //Sort the array
+      insertion_sort(V1,n);
+      //Display the sorted array
+      write("the final sorted array",V1);
+      END
